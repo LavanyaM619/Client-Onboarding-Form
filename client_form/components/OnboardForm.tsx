@@ -188,22 +188,25 @@ export default function OnboardForm() {
       </div>
 
       <div>
-        <label htmlFor="projectStartDate" className="block font-semibold mb-1">
-          Project Start Date
-        </label>
-        <input
-          id="projectStartDate"
-          type="date"
-          {...register("projectStartDate")}
-          className={`w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 ${
-            errors.projectStartDate ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-blue-500"
-          }`}
-          min={minDate}
-        />
-        {errors.projectStartDate && (
-          <p className="text-red-600 mt-1 text-sm">{errors.projectStartDate.message}</p>
-        )}
-      </div>
+  <label htmlFor="projectStartDate" className="block font-semibold mb-1">
+    Project Start Date
+  </label>
+  <input
+    id="projectStartDate"
+    type="date"
+    {...register("projectStartDate")}
+    className={`w-full border rounded px-3 py-2 bg-white text-black focus:outline-none focus:ring-2 ${
+      errors.projectStartDate
+        ? "border-red-500 focus:ring-red-500"
+        : "border-gray-300 focus:ring-blue-500"
+    }`}
+    min={minDate}
+  />
+  {errors.projectStartDate && (
+    <p className="text-red-600 mt-1 text-sm">{errors.projectStartDate.message}</p>
+  )}
+</div>
+
 
       <div className="flex items-center gap-2">
         <input
